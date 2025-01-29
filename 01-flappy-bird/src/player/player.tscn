@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjnu6s70khnj"]
+
+[ext_resource type="Texture2D" uid="uid://bjjpum1ph27lg" path="res://assets/vlinder.png" id="1_2pk5s"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_sg7fm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxit6"]
+radius = 115.07
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 81
+scale = Vector2(0.5, 0.5)
+motion_mode = 1
+script = ExtResource("1_sg7fm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2pk5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gxit6")
