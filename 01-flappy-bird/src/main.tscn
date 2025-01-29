@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bah3lsr2pxytp"]
+[gd_scene load_steps=6 format=3 uid="uid://bah3lsr2pxytp"]
 
 [ext_resource type="PackedScene" uid="uid://pjnu6s70khnj" path="res://player/player.tscn" id="1_3rgou"]
 [ext_resource type="Script" path="res://main.gd" id="1_aq38l"]
 [ext_resource type="PackedScene" uid="uid://w0ooprg5ax72" path="res://background/cloud_spawner.tscn" id="2_r77p4"]
+[ext_resource type="PackedScene" uid="uid://bvj1cop621fat" path="res://wall/wall_spawner.tscn" id="5_osoah"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hmi76"]
 
@@ -17,10 +18,14 @@ grow_vertical = 2
 color = Color(0.548129, 0.839173, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_3rgou")]
-position = Vector2(219, 321)
+position = Vector2(220, 360)
+scale = Vector2(0.35, 0.35)
 
 [node name="CloudSpawner" parent="." instance=ExtResource("2_r77p4")]
 position = Vector2(1350, 360)
+
+[node name="WallSpawner" parent="." instance=ExtResource("5_osoah")]
+position = Vector2(1317, 358)
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -44,7 +49,7 @@ text = "[center]Distance: 0m[/center]
 fit_content = true
 
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
-position = Vector2(640, 720)
+position = Vector2(659, 858)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_hmi76")

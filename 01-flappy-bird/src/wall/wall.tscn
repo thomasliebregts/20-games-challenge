@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl7us5fl0ktpt"]
+
+[ext_resource type="Texture2D" uid="uid://cnom8fsyqv7u4" path="res://assets/redpipe.png" id="1_gxmdd"]
+[ext_resource type="Script" path="res://wall/wall.gd" id="1_vr2yx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuga4"]
+size = Vector2(90, 662)
+
+[node name="Wall" type="Node2D"]
+z_index = 85
+script = ExtResource("1_vr2yx")
+
+[node name="VisibilityChecker" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(57, 0.999985)
+scale = Vector2(1, 32.9)
+
+[node name="Body" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_fuga4")
+
+[node name="Sprite" type="Sprite2D" parent="Body"]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.414)
+texture = ExtResource("1_gxmdd")
+
+[connection signal="screen_exited" from="VisibilityChecker" to="." method="_on_visibility_checker_screen_exited"]
