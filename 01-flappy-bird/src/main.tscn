@@ -16,4 +16,4 @@ color = Color(0.548129, 0.839173, 1, 1)
 position = Vector2(219, 321)
 
 [node name="CloudSpawner" parent="." instance=ExtResource("2_r77p4")]
-position = Vector2(1319, 368)
+position = Vector2(1350, 360)

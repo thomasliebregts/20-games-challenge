@@ -12,3 +12,9 @@
 texture = ExtResource("2_igrov")
 script = ExtResource("1_8fvka")
 cloud_textures = Array[Texture2D]([ExtResource("2_igrov"), ExtResource("3_0q7mv"), ExtResource("4_xxiy0"), ExtResource("5_ld0rh"), ExtResource("6_ahmh4"), ExtResource("7_lc2ux")])
+
+[node name="VisibilityChecker" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(78, 3)
+scale = Vector2(0.8, 3.7)
+
+[connection signal="screen_exited" from="VisibilityChecker" to="." method="_on_visibility_checker_screen_exited"]
