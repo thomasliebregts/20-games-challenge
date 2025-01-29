@@ -7,6 +7,8 @@
 radius = 115.07
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 75
+scale = Vector2(0.5, 0.5)
 motion_mode = 1
 script = ExtResource("1_sg7fm")
 
